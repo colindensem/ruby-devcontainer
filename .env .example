@@ -1,8 +1,16 @@
 # Rather than use the directory name, let's control the name of the project.
 export COMPOSE_PROJECT_NAME=sinatra-app
 
-# The rack environment to run in
+# The rack environment/config to run under
 export RACK_ENV=development
+export WEB_CONCURRENCY=1
+export MAX_THREADS=1
+export PORT=5000
+export LISTEN=127.0.0.1
+
+# Should Docker restart your containers if they go down in unexpected ways?
+#export DOCKER_RESTART_POLICY=unless-stopped
+export DOCKER_RESTART_POLICY=no
 
 # CPU and memory constraints will be added to your services? When left at
 # 0 they will happily use as much as needed.
