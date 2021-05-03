@@ -30,3 +30,8 @@ Open a browser to `localhost:5000`
 
 ## Next steps?
 To make it your own, you'll want to rename the `SinatraApp` and `sinatra-app` references, tweak the config and alike.
+
+There is a gem included, `figaro` that makes local application config management from env vars easier.
+
+`config/settings.yml` includes public, known attributes. This file is included in git.
+`config/application.yml` includes private, unknown attributes. This file is not included in git.
