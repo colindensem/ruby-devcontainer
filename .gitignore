@@ -3,3 +3,5 @@
 
 # Ignore bundled gems
 vendor/bundle
+
+spec/examples.txt
