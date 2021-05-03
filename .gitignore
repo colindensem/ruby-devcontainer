@@ -1,1 +1,5 @@
+# Ignore Dotenv files
 .env
+
+# Ignore bundled gems
+vendor/bundle
