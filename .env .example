@@ -1,0 +1,7 @@
+# Rather than use the directory name, let's control the name of the project.
+export COMPOSE_PROJECT_NAME=sinatra-app
+
+# CPU and memory constraints will be added to your services? When left at
+# 0 they will happily use as much as needed.
+# export DOCKER_REDIS_CPUS=0
+# export DOCKER_REDIS_MEMORY=0

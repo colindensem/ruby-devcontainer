@@ -1,0 +1,30 @@
+version: "3"
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+
+    volumes:
+      - ..:/workspace:cached
+    env_file:
+      - "../.env"
+    network_mode: service:redis
+    command: sleep infinity
+
+  redis:
+    deploy:
+      resources:
+        limits:
+          cpus: "${DOCKER_REDIS_CPUS:-0}"
+          memory: "${DOCKER_REDIS_MEMORY:-0}"
+    env_file:
+      - "../.env"
+    image: "redis:6.0.10-buster"
+    restart: "${DOCKER_RESTART_POLICY:-unless-stopped}"
+    stop_grace_period: "3s"
+    volumes:
+      - "redis:/data"
+
+volumes:
+  redis: {}
